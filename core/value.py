@@ -1,3 +1,5 @@
+from ..micrograd.trace_graph import draw_dot
+
 OPS = {
     "__add__": "+",
     "__mul__": "*"
@@ -23,8 +25,13 @@ class Value:
     
     
 
-a = Value(1)
-b = Value(2)
-
-c = a + b
+a = Value(2.0, label='a')
+b = Value(-3.0, label='b')
+c = Value(10.0, label='c')
+  
 print(c)
+draw_dot(c)
+
+
+
+
